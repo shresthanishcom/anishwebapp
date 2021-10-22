@@ -1,0 +1,13 @@
+.photo-container {
+  position: relative;
+  background-color: white;
+}
+img {
+  height: 300px;
+}
+.front-pic {
+  position: absolute;
+  /* left: 200px; */
+}
+.back-pic {
+}
