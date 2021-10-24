@@ -1,0 +1,9 @@
+.container {
+  margin-top: 40px;
+  position: relative;
+}
+
+.pictureDetail {
+  margin: 2px;
+  display: inline-block;
+}
