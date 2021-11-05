@@ -3,7 +3,12 @@
   position: relative;
 }
 
-.pictureDetail {
+.picture-container {
+  border: 2px solid;
   margin: 2px;
   display: inline-block;
+}
+
+picture-detail {
+  display: block;
 }

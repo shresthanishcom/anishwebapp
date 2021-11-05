@@ -1,6 +1,6 @@
 .footer {
   position: relative;
-  height: 100%;
+  height: 2rem;
   display: flex;
   background-image: linear-gradient(to bottom, green, yellow);
   bottom: 0px;

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import PictureDisplay from "./Common/PictureDisplay";
 
 export const Photos = () => {
-  const state = useSelector((state) => state);
+  const something = useDispatch("LIKE_ACTION");
   const [pictureState, setPictureState] = useState([]);
 
   useEffect(async () => {
@@ -17,21 +17,10 @@ export const Photos = () => {
         setPictureState([]);
       });
   }, []);
-  // useEffect(async () => {
-  //   for (let i = 0; i < 11; i++) {
-  //     await axios
-  //       .post("http://localhost:5000/pictures/addphotos/", {
-  //         photo_id: i,
-  //         photo_name: `anish${i}.jpg`,
-  //         like_count: "0",
-  //       })
-  //       .then(() => console.log("posted" + i))
-  //       .catch((err) => console.log(err));
-  //   }
-  // }, []);
+  const state = useSelector((pictureState) => console.log(pictureState));
+
   return (
     <React.Fragment>
-      {console.log(pictureState)}
       <PictureDisplay pictures={pictureState} />
       {/* <div className="images">
         <img src="./images/anish3.jpg" alt="anish shrestha pic" />

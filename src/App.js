@@ -17,12 +17,20 @@ function App() {
   return (
     <React.Fragment>
       <Router>
-        <Header />
-        <Switch>
-          <Route path="/" exact component={Introduction} />
-          <Route path="/photos" component={Photos} />
-        </Switch>
-        <Footer />
+        <div className="app-container">
+          <div className="app-header">
+            <Header />
+          </div>
+          <div className="app-body">
+            <Switch>
+              <Route path="/" exact component={Introduction} />
+              <Route path="/photos" component={Photos} />
+            </Switch>
+          </div>
+          <div className="app-footer">
+            <Footer />
+          </div>
+        </div>
       </Router>
     </React.Fragment>
   );

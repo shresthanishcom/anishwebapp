@@ -5,6 +5,7 @@
 // };
 
 export const ActionTypes = {
+  ADD_IMAGES: "ADD_IMAGES",
   SET_LIKE: "SET_LIKE",
   UNSET_LIKE: "UNSET_LIKE",
 };

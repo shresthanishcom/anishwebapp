@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import { likeReducer } from "./likeReducer";
 
 const reducers = combineReducers({
-  allProducts: likeReducer,
+  likeReducer,
 });
 
 export default reducers;

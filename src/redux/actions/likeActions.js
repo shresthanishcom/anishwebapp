@@ -1,5 +1,14 @@
 import { ActionTypes } from "../constants/action-types";
 
+export const addImages = (images) => {
+  return {
+    type: ActionTypes.ADD_IMAGES,
+    payload: {
+      images,
+    },
+  };
+};
+
 export const setLike = (imageDetail) => {
   return {
     type: ActionTypes.SET_LIKE,
