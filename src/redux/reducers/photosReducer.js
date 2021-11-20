@@ -1,25 +1,10 @@
 import { ActionTypes } from "../constants/action-types";
-import axios from "axios";
+import { createStore } from "redux";
 
-const initialState = () => {
-  return {
-    imageDetails: async () => {
-      await axios
-        .get("http://localhost:5000/pictures/")
-        .then((res) => {
-          return res.data;
-        })
-        .catch((err) => {
-          console.log(err);
-          return [];
-        });
-    },
-  };
-};
-
-export const likeReducer = (state = [], { type, payload }) => {
+export const photosReducer = (state = {}, { type, payload }) => {
   switch (type) {
     case ActionTypes.ADD_IMAGES:
+      state = payload.images;
       return {
         state: payload.images,
       };

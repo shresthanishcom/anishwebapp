@@ -3,9 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Css/Introduction.css";
 import PhotoAnimate from "./PhotoAnimate";
 import ControlledCarousel from "./Common/ControlledCarousel";
+import store from "../../redux/store";
 
 export default class Introduction extends Component {
   render() {
+    console.log(store.getState());
     return (
       <React.Fragment>
         <div

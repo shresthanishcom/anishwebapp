@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import { likeReducer } from "./likeReducer";
+import { photosReducer } from "./photosReducer";
 
 const reducers = combineReducers({
-  likeReducer,
+  photosReducer,
 });
 
 export default reducers;
