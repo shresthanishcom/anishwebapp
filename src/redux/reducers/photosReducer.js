@@ -4,9 +4,14 @@ import { createStore } from "redux";
 export const photosReducer = (state = {}, { type, payload }) => {
   switch (type) {
     case ActionTypes.ADD_IMAGES:
-      state = payload.images;
+      //adding new key like is true or not
+
+      state = payload.images.map((image) => {
+        return { ...image, likeStatus: false };
+      });
+
       return {
-        state: payload.images,
+        state,
       };
 
     case ActionTypes.SET_LIKE:
