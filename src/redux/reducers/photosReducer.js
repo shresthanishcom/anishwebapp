@@ -1,5 +1,4 @@
 import { ActionTypes } from "../constants/action-types";
-import { createStore } from "redux";
 
 export const photosReducer = (state = {}, { type, payload }) => {
   switch (type) {
@@ -7,7 +6,7 @@ export const photosReducer = (state = {}, { type, payload }) => {
       //adding new key like is true or not
 
       state = payload.images.map((image) => {
-        return { ...image, likeStatus: false };
+        return { ...image, likeStatus: "disliked" };
       });
 
       return {
@@ -15,7 +14,7 @@ export const photosReducer = (state = {}, { type, payload }) => {
       };
 
     case ActionTypes.SET_LIKE:
-      const updated = state;
+      var updated = state;
       return updated.filter((image) => {
         if (image.id === payload.id) {
           return {

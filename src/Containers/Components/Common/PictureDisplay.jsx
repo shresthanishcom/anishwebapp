@@ -1,17 +1,16 @@
-import React, { useState } from "react";
-import reactDom from "react-dom";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faThumbsDown } from "@fortawesome/free-regular-svg-icons";
 
 import "../Css/Picture.css";
+import { useDispatch } from "react-redux";
 
 export default function PictureDisplay(props) {
   const { pictures } = props;
 
-  const [likeIcon, setLikeIcon] = useState(false);
-
   const onClickLike = (event) => {
-    setLikeIcon(true);
+    console.log(event.target.status);
+    // useDispatch("SetLike",{id: event.target.id})
   };
 
   return (
@@ -24,9 +23,16 @@ export default function PictureDisplay(props) {
                 src={`./images/${picture["photo_name"]}`}
                 alt={picture["photo_name"]}
               />
+              {console.log(picture)}
               <div className="picture-detail">
                 <FontAwesomeIcon
-                  icon={likeIcon ? faThumbsUp : faThumbsDown}
+                  id={picture.photo_id}
+                  status={`"${picture.likeStatus}"`}
+                  icon={
+                    picture["likeStatus"] === "liked"
+                      ? faThumbsUp
+                      : faThumbsDown
+                  }
                   onClick={(event) => {
                     onClickLike(event);
                   }}

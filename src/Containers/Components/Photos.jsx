@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import PictureDisplay from "./Common/PictureDisplay";
 import store from "../../redux/store";
@@ -8,27 +7,31 @@ export const Photos = () => {
   // const images = useDispatch("ADD_IMAGES");
   const [pictureState, setPictureState] = useState([]);
 
-  useEffect(async () => {
-    await axios
-      .get("http://localhost:5000/pictures/")
-      .then((res) => {
-        setPictureState(res.data);
-      })
-      .catch((err) => {
-        setPictureState([]);
-      });
+  useEffect(() => {
+    async function getData() {
+      await axios
+        .get("http://localhost:5000/pictures/")
+        .then((res) => {
+          setPictureState(res.data);
+        })
+        .catch((err) => {
+          setPictureState([]);
+        });
+    }
+    getData();
   }, []);
 
-  const reduxStore = store.dispatch({
+  store.dispatch({
     type: "ADD_IMAGES",
     payload: {
       images: pictureState,
     },
   });
 
+  const State = store.getState().photosReducer.state;
   return (
     <React.Fragment>
-      <PictureDisplay pictures={reduxStore["payload"]["images"]} />
+      <PictureDisplay pictures={State} />
       {/* <div className="images">
         <img src="./images/anish3.jpg" alt="anish shrestha pic" />
         <img src="./images/anish5.jpg" alt="anish shrestha photo1" />
