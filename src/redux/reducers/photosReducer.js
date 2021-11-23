@@ -14,28 +14,21 @@ export const photosReducer = (state = {}, { type, payload }) => {
       };
 
     case ActionTypes.SET_LIKE:
-      var updated = state;
-      return updated.filter((image) => {
-        if (image.id === payload.id) {
+      console.log(state);
+      console.log(payload);
+      const likedState = state.state.map((image) => {
+        if (image.photo_id === parseInt(payload.id)) {
           return {
-            id: payload.id,
-            likes: true,
-            likeCount: image.likeCount + 1,
+            ...image,
+            like_count: image.like_count + 1,
+            likeStatus: "liked",
           };
         } else return image;
       });
+      state = { state: likedState };
 
-    case ActionTypes.UNSET_LIKE:
-      updated = state;
-      return updated.filter((image) => {
-        if (image.id === payload.id) {
-          return {
-            id: payload.id,
-            likes: false,
-            likeCount: image.likeCount - 1,
-          };
-        } else return image;
-      });
+      return state;
+
     default:
       return state;
   }

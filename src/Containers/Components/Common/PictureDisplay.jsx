@@ -6,11 +6,13 @@ import "../Css/Picture.css";
 import { useDispatch } from "react-redux";
 
 export default function PictureDisplay(props) {
+  const dispatch = useDispatch();
   const { pictures } = props;
 
   const onClickLike = (event) => {
-    console.log(event.target.status);
-    // useDispatch("SetLike",{id: event.target.id})
+    console.log(
+      dispatch({ type: "SET_LIKE", payload: { id: event.currentTarget.id } })
+    );
   };
 
   return (
@@ -21,23 +23,22 @@ export default function PictureDisplay(props) {
             <div className="picture-container">
               <img
                 src={`./images/${picture["photo_name"]}`}
+                name={picture.likeStatus}
                 alt={picture["photo_name"]}
               />
-              {console.log(picture)}
               <div className="picture-detail">
                 <FontAwesomeIcon
-                  id={picture.photo_id}
-                  status={`"${picture.likeStatus}"`}
                   icon={
                     picture["likeStatus"] === "liked"
                       ? faThumbsUp
                       : faThumbsDown
                   }
+                  name={picture.likeStatus}
+                  id={picture.photo_id}
                   onClick={(event) => {
                     onClickLike(event);
                   }}
                 />
-
                 {picture["like_count"]}
               </div>
             </div>
