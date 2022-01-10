@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Css/Introduction.css";
-import PhotoAnimate from "./PhotoAnimate";
 import ControlledCarousel from "./Common/ControlledCarousel";
+import PhotoDisplay from "./PhotoDisplay";
 
 export default class Introduction extends Component {
   render() {
@@ -14,12 +14,8 @@ export default class Introduction extends Component {
         >
           <div className="typewriter">
             <h1>Hi! I am anish Shrestha</h1>
-            <PhotoAnimate />
+            <PhotoDisplay />
             <ControlledCarousel />
-            <p>
-              My name is Anish Shrestha. I am from Hetauda, Nepal. Currently, I
-              am living in Budhanilkantha.
-            </p>
 
             <div className="images">
               <img src="./images/anish3.jpg" alt="anish shrestha pic" />

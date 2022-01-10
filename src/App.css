@@ -1,23 +1,5 @@
 * {
   margin: 0px;
   padding: 0px;
-}
-.app-container {
-  position: relative;
-}
-/* .app-header {
-  position: absolute;
-  top: 0px;
-}
-.app-footer {
-  position: absolute;
-  bottom: 0px;
-} */
-.app-body {
-  min-height: 95vh;
-}
-.app-footer {
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
+  box-sizing: border-box;
 }

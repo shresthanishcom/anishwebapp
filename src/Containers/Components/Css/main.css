@@ -1,0 +1,24 @@
+.sunset-image img {
+  height: 100%;
+  width: 100vw;
+  margin: 20px 0px;
+}
+
+.anish-detail {
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  width: 100%;
+  margin: 20px 0px;
+}
+.anish-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.anish-description {
+  width: 100%;
+  font-weight: 800;
+  font-size: 40px;
+  font-family: "Island Moments", cursive;
+}

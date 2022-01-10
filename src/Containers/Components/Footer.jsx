@@ -11,25 +11,25 @@ export default class Footer extends Component {
     return (
       <React.Fragment>
         <div className="footer">
-          <div className="col-md-4 brandinfo">
+          <div className="col-lg-3 col-md-3 col-sm-3 col-xs-2 col-6 brand-info">
             Anish Shrestha {this.currentDate()}
           </div>
-          <div className="col-md-8 col-lg-6 brandlinks">
+          <div className="col-lg-7 col-md-7 col-sm-6 col-xs-4 col-7 brand-link">
             <a
               className="clickable facebook"
-              href="https://www.facebook.com/anishresthanishrestha/"
+              href="https://www.facebook.com/anishresthanishrestha"
             >
               Facebook
               <FontAwesomeIcon color={"blue"} icon={["fab", "facebook"]} />
             </a>
             <a
               className="clickable instagram"
-              href="https://www.instagram.com/a.n.i.s.h.r.e.s.t.h.a/"
+              href="https://www.instagram.com/a.n.i.s.h.r.e.s.t.h.a"
             >
               Instagram
               <FontAwesomeIcon color={"red"} icon={["fab", "instagram"]} />
             </a>
-            <a className="clickable twitter" href="twitter.com">
+            <a className="clickable twitter" href="https://www.twitter.com">
               Twitter
               <FontAwesomeIcon color={"blue"} icon={["fab", "twitter"]} />
             </a>
@@ -40,6 +40,9 @@ export default class Footer extends Component {
               Tiktok
               <FontAwesomeIcon icon={["fab", "tiktok"]} />
             </a>
+          </div>
+          <div className="col-lg-2 col-md-2 col-sm-3 col-xs-6 col-5 anishImg">
+            <img src="./images/anishSpeech.png" alt="anish in speaking" />
           </div>
         </div>
       </React.Fragment>

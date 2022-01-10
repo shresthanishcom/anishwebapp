@@ -1,14 +1,14 @@
 p {
-  color: white;
+  color: black;
 }
 .typewriter h1 {
-  color: white;
+  color: black;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  margin: 0; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.15em; /* Adjust as needed */
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation: typing 10s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 .Container {
@@ -17,10 +17,9 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(./desktopanish.jpg);
+  /* background-image: url(./desktopanish.jpg);
   background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  background-size: cover; */
 }
 
 .images > img {
@@ -50,7 +49,7 @@ p {
 }
 /* responsive design rules */
 @media screen and (max-width: 1024px) {
-  .Container {
+  /* .Container {
     background-image: url("./mobileanish.jpg");
-  }
+  } */
 }
